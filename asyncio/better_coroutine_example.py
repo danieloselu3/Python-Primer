@@ -22,11 +22,7 @@ async def download_coroutine(session, url):
         
 
 async def main(loop):
-    urls =["https://www.irs.gov/pub/irs-pdf/f1040.pdf",
-           "https://www.irs.gov/pub/irs-pdf/f1040a.pdf",
-           "https://www.irs.gov/pub/irs-pdf/f1040ez.pdf",
-           "https://www.irs.gov/pub/irs-pdf/f1040es.pdf",
-           "https://www.irs.gov/pub/irs-pdf/f1040sb.pdf"]
+    urls =[]
     
     async with aiohttp.ClientSession(loop=loop) as session:
         tasks = [download_coroutine(session, url) for url in urls]
